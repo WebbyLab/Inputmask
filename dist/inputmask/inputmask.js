@@ -1026,6 +1026,7 @@
             }), $(colorMask).on("mouseenter", function(e) {
                 return EventHandlers.mouseenterEvent.call(input, [ e ]);
             }), $(colorMask).on("click", function(e) {
+                if (opts.positionCaretOnClick === 'none') return;
                 return caret(input, function(clientx) {
                     var caretPos, e = document.createElement("span");
                     for (var style in computedStyle) isNaN(style) && -1 !== style.indexOf("font") && (e.style[style] = computedStyle[style]);
