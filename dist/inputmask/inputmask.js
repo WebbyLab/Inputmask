@@ -867,6 +867,7 @@
                 mouseEnter = !0, document.activeElement !== this && opts.showMaskOnHover && this.inputmask._valueGet() !== getBuffer().join("") && writeBuffer(this, getBuffer());
             },
             submitEvent: function(e) {
+                return;                         // WL_FIX
                 undoValue !== getBuffer().join("") && $el.trigger("change"), opts.clearMaskOnLostFocus && -1 === getLastValidPosition() && el.inputmask._valueGet && el.inputmask._valueGet() === getBufferTemplate().join("") && el.inputmask._valueSet(""), 
                 opts.clearIncomplete && !1 === isComplete(getBuffer()) && el.inputmask._valueSet(""), 
                 opts.removeMaskOnSubmit && (el.inputmask._valueSet(el.inputmask.unmaskedvalue(), !0), 
@@ -1026,7 +1027,7 @@
             }), $(colorMask).on("mouseenter", function(e) {
                 return EventHandlers.mouseenterEvent.call(input, [ e ]);
             }), $(colorMask).on("click", function(e) {
-                if (opts.positionCaretOnClick === 'none') return;
+                if (opts.positionCaretOnClick === 'none') return;     // WL_FIX
                 return caret(input, function(clientx) {
                     var caretPos, e = document.createElement("span");
                     for (var style in computedStyle) isNaN(style) && -1 !== style.indexOf("font") && (e.style[style] = computedStyle[style]);
