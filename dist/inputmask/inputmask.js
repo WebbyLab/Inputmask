@@ -906,7 +906,8 @@
                         end: result.forwardPosition
                     });
                 }
-            }), writeOut && writeBuffer(input, getBuffer(), result ? result.forwardPosition : undefined, initiatingEvent || new $.Event("checkval"), initiatingEvent && "input" === initiatingEvent.type);
+            }), writeOut && writeBuffer(input, getBuffer(), undefined, initiatingEvent || new $.Event("checkval"), initiatingEvent && "input" === initiatingEvent.type);
+            /* WL_FIX writeBuffer(input, getBuffer(), result ? result.forwardPosition : undefined, initiatingEvent || new $.Event("checkval"), initiatingEvent && "input" === initiatingEvent.type); */
         }
         function unmaskedvalue(input) {
             if (input) {
