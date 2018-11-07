@@ -778,7 +778,7 @@
                 this.inputmask.refreshValue = !1;
                 var value = (value = e && e.detail ? e.detail[0] : arguments[1]) || this.inputmask._valueGet(!0);
                 $.isFunction(opts.onBeforeMask) && (value = opts.onBeforeMask.call(inputmask, value, opts) || value), 
-                checkVal(this, !0, !1, value = value.split("")), undoValue = getBuffer().join(""), 
+                checkVal(this, !0, !1, value = value.split("")), /* WL_FIX undoValue = getBuffer().join(""), */ 
                 (opts.clearMaskOnLostFocus || opts.clearIncomplete) && this.inputmask._valueGet() === getBufferTemplate().join("") && this.inputmask._valueSet("");
             },
             focusEvent: function(e) {
