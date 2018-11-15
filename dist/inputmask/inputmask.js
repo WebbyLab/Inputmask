@@ -984,6 +984,7 @@
         function isComplete(buffer) {
             if ($.isFunction(opts.isComplete)) return opts.isComplete(buffer, opts);
             if ("*" === opts.repeat) return undefined;
+            if (opts.regex && opts.regex.indexOf('*') !== -1) return undefined;           // WL_FIX
             var complete = !1, lrp = determineLastRequiredPosition(!0), aml = seekPrevious(lrp.l);
             if (lrp.def === undefined || lrp.def.newBlockMarker || lrp.def.optionality || lrp.def.optionalQuantifier) {
                 complete = !0;
